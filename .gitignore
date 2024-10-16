@@ -3,3 +3,4 @@ target/
 mvnw.cmd
 mvnw
 KeycloackConfig/postgres
+.DS_Store
