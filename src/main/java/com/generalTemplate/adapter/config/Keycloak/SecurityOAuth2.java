@@ -4,7 +4,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
-import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -22,7 +21,6 @@ import java.util.List;
 
 @Configuration
 @EnableWebSecurity
-//@EnableMethodSecurity
 public class SecurityOAuth2 {
 
     interface AuthoritiesConverter extends Converter<Map<String, Object>, Collection<GrantedAuthority>> {}
@@ -65,4 +63,25 @@ public class SecurityOAuth2 {
 
         return http.build();
     }
+
+    //Using OAuth2 RestTemplate with old SpringBoot libraries uncomment 2 methods below
+//    @Bean
+//    protected OAuth2ProtectedResourceDetail oauth2Resource(){
+//        ClientCredentialsResourceDetails client = new ClientCredentialsResourceDetails();
+//        client.setAccessTokenUri("tokenUrl");
+//        client.setClientId("clientId");
+//        client.setClientSecret("clientSecret");
+//        client.setGrantType("grantType");
+//        client.setScope("scope");
+//        client.setAuthenticationScheme(AuthenticationScheme.header);
+//        return client;
+//    }
+//
+//    @Bean
+//    public OAuth2RestTemplate oAuth2RestTemplate(){
+//        AccessTokenRequest atr = new DefaultAccessTokenRequest();
+//        OAuth2RestTemplate oAuth2RestTemplate = new OAuth2RestTemplate(oauth2Resource(), new DefaultOAuth2ClientContext(atr));
+//        OAuth2RestTemplate.setRequestFactory(new HttpComponentsClientHttpRequestFactory());
+//        return oAuth2RestTemplate;
+//    }
 }
