@@ -1,7 +1,7 @@
 package com.generalTemplate.adapter.rest;
 
 import com.generalTemplate.adapter.config.Keycloak.entity.UserInfoKeycloak;
-import com.generalTemplate.adapter.rest.pdf.entity.PdfContent;
+import com.generalTemplate.adapter.rest.entity.pdf.PdfContent;
 import com.generalTemplate.adapter.util.PdfCreator;
 import com.itextpdf.text.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +42,7 @@ public class ApiRest {
 
     @PostMapping("get_pdf")
     public ResponseEntity<byte[]> getPDFExample(@RequestBody PdfContent docContent) throws DocumentException, IOException {
+
         ByteArrayOutputStream pdfDocument = pdfCreator.createPdf(docContent);
 
         HttpHeaders headers = new HttpHeaders();

@@ -1,4 +1,4 @@
-package com.generalTemplate.adapter.rest.pdf.entity;
+package com.generalTemplate.adapter.rest.entity.pdf;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Builder;

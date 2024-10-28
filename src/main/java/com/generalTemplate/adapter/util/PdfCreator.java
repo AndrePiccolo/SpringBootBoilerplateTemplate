@@ -1,6 +1,6 @@
 package com.generalTemplate.adapter.util;
 
-import com.generalTemplate.adapter.rest.pdf.entity.PdfContent;
+import com.generalTemplate.adapter.rest.entity.pdf.PdfContent;
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
 import org.springframework.stereotype.Component;
