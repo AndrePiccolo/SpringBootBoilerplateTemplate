@@ -1,8 +1,5 @@
 package com.generalTemplate.adapter.config.swagger;
 
-import io.swagger.v3.oas.models.headers.Header;
-import io.swagger.v3.oas.models.media.StringSchema;
-import io.swagger.v3.oas.models.parameters.Parameter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
