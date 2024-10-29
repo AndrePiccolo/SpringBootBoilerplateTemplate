@@ -1,6 +1,6 @@
 package com.generalTemplate.adapter.rest;
 
-import com.generalTemplate.adapter.config.Keycloak.entity.UserInfoKeycloak;
+import com.generalTemplate.adapter.config.keycloak.entity.UserInfoKeycloak;
 import com.generalTemplate.adapter.rest.entity.pdf.PdfContent;
 import com.generalTemplate.adapter.util.PdfCreator;
 import com.itextpdf.text.DocumentException;

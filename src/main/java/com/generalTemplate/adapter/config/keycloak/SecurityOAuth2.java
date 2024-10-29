@@ -1,4 +1,4 @@
-package com.generalTemplate.adapter.config.Keycloak;
+package com.generalTemplate.adapter.config.keycloak;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -58,6 +58,9 @@ public class SecurityOAuth2 {
         }).csrf(AbstractHttpConfigurer::disable);
 
         http.authorizeHttpRequests(requests -> {
+            requests.requestMatchers("/v3/api-docs/**",
+                    "/swagger-ui/**",
+                    "/swagger-ui.html").permitAll();
             requests.anyRequest().authenticated();
         });
 

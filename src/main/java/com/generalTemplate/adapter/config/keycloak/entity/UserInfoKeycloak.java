@@ -1,4 +1,4 @@
-package com.generalTemplate.adapter.config.Keycloak.entity;
+package com.generalTemplate.adapter.config.keycloak.entity;
 
 import lombok.Builder;
 import lombok.Data;
