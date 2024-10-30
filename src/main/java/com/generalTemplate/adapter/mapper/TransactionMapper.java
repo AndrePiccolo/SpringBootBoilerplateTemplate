@@ -1,4 +1,4 @@
-package com.generalTemplate.adapter.rest;
+package com.generalTemplate.adapter.mapper;
 
 import com.generalTemplate.adapter.rest.entity.transaction.Transaction;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;

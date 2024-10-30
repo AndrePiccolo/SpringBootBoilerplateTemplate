@@ -1,4 +1,4 @@
-package com.generalTemplate.adapter.exceptionmapper;
+package com.generalTemplate.adapter.mapper;
 
 import org.springdoc.api.ErrorMessage;
 import org.springframework.http.HttpStatus;

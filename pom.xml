@@ -120,6 +120,13 @@
 			<artifactId>bcpkix-jdk18on</artifactId>
 			<version>1.78.1</version>
 		</dependency>
+
+		<!-- REDIS DB -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<version>3.3.5</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -1,6 +1,6 @@
 package com.generalTemplate.adapter.filter;
 
-import com.generalTemplate.adapter.rest.TransactionMapper;
+import com.generalTemplate.adapter.mapper.TransactionMapper;
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;

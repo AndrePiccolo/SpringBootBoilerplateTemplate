@@ -1,6 +1,6 @@
 package com.generalTemplate.adapter.logger;
 
-import com.generalTemplate.adapter.rest.TransactionMapper;
+import com.generalTemplate.adapter.mapper.TransactionMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
@@ -21,7 +21,7 @@ public class LoggingAspect {
     private static final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 
     @Before("execution(* com.generalTemplate..*.*(..)) && " +
-            "!execution(* com.generalTemplate.adapter.rest.TransactionMapper.*(..)) && " +
+            "!execution(* com.generalTemplate.adapter.mapper.TransactionMapper.*(..)) && " +
             "!execution(* com.generalTemplate.adapter.rest.entity..*.*(..)) &&" +
             "!execution(* com.generalTemplate.adapter.filter.RequestFilter.*(..))")
     public void logBeforeMethod(JoinPoint joinPoint) {
