@@ -13,8 +13,8 @@ public class TransactionMapper {
     @Scope(value = ConfigurableBeanFactory.SCOPE_SINGLETON)
     public Transaction singletonTransaction(){
         Transaction transaction = new Transaction();
-        transaction.setTransactionId("No TransactionId");
-        transaction.setSessionId("No SessionId");
+        transaction.setTransactionId("Internal call");
+        transaction.setSessionId("Internal call");
         return transaction;
     }
 }

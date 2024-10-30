@@ -1,7 +1,10 @@
 package com.generalTemplate.adapter.rest;
 
 import com.generalTemplate.adapter.config.keycloak.entity.UserInfoKeycloak;
+import com.generalTemplate.adapter.database.entity.EntityExample;
+import com.generalTemplate.adapter.port.RepositoryExampleInterface;
 import com.generalTemplate.adapter.rest.entity.pdf.PdfContent;
+import com.generalTemplate.adapter.rest.entity.testdb.DBEntryTest;
 import com.generalTemplate.adapter.util.PdfCreator;
 import com.itextpdf.text.DocumentException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +19,7 @@ import org.springframework.security.core.GrantedAuthority;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 @RequestMapping("example")
@@ -23,6 +27,42 @@ public class ApiRest {
 
     @Autowired
     private PdfCreator pdfCreator;
+    @Autowired
+    private RepositoryExampleInterface repositoryExample;
+
+    @PostMapping("database/addInformation")
+    public ResponseEntity<EntityExample> createDBEntry(@RequestBody DBEntryTest dbEntry) {
+
+        return new ResponseEntity<>(repositoryExample.CreateExampleEntry(EntityExample.builder()
+                .date(dbEntry.getDate())
+                .comments(dbEntry.getComments())
+                .build()), HttpStatus.OK);
+    }
+
+    @GetMapping("database/getInformation")
+    public ResponseEntity<EntityExample> getDBEntry(@RequestParam(name = "id") String id) {
+        return new ResponseEntity<>(repositoryExample.GetExampleEntry(id), HttpStatus.OK);
+    }
+
+    @GetMapping("database/getAllInformation")
+    public ResponseEntity<List<EntityExample>> getAllDBEntry() {
+        return new ResponseEntity<>(repositoryExample.GetAllExampleEntry(), HttpStatus.OK);
+    }
+
+    @PutMapping("database/updateInformation")
+    public ResponseEntity<EntityExample> updateDBEntry(@RequestBody DBEntryTest dbEntry) {
+        return new ResponseEntity<>(repositoryExample.UpdateExampleEntry(EntityExample.builder()
+                .id(dbEntry.getId())
+                .date(dbEntry.getDate())
+                .comments(dbEntry.getComments())
+                .build()), HttpStatus.OK);
+    }
+
+    @DeleteMapping("database/deleteInformation")
+    public ResponseEntity<String> deleteDBEntry(@RequestParam(name = "id") String id) {
+        repositoryExample.DeleteExampleEntry(id);
+        return new ResponseEntity<>("Entry deleted", HttpStatus.OK);
+    }
 
     @GetMapping("get")
     public ResponseEntity<String> getExample(

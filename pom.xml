@@ -123,8 +123,8 @@
 
 		<!-- REDIS DB -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-redis</artifactId>
 			<version>3.3.5</version>
 		</dependency>
 		<dependency>
